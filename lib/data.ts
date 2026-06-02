@@ -280,3 +280,140 @@ export const skills = {
   "Cloud & DevOps": ["AWS", "Docker", "Kubernetes", "GitHub Actions", "CI/CD"],
   "Creative & 3D": ["Unity", "Unreal Engine", "Autodesk Maya", "Samsung Tizen"]
 } as const;
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "building-production-ai-agents",
+    title: "Building Production-Grade AI Agents on Local LLMs",
+    excerpt:
+      "A deep dive into architecting autonomous AI agents that run on local models like Ollama, prioritizing privacy, cost, and control while maintaining production quality.",
+    date: "2025-01-15",
+    readTime: "12 min read",
+    category: "AI & Architecture",
+    tags: ["AI Agents", "Ollama", "LLMs", "Architecture", "Python"]
+  },
+  {
+    slug: "multi-brand-platform-architecture",
+    title: "Scaling Multi-Brand Platforms: Lessons from Continental Food",
+    excerpt:
+      "How we architected and scaled a single codebase to serve 5 brands across 2 markets with unique requirements, handling 10M+ transactions yearly.",
+    date: "2025-01-10",
+    readTime: "10 min read",
+    category: "Full-Stack Architecture",
+    tags: ["Scaling", "Next.js", ".NET", "Architecture", "Multi-tenant"]
+  },
+  {
+    slug: "react-native-monorepo-patterns",
+    title: "React Native Monorepo Patterns for Cross-Platform Teams",
+    excerpt:
+      "Structuring a React Native monorepo to share business logic, components, and utilities across iOS, Android, and web while maintaining developer velocity.",
+    date: "2025-01-05",
+    readTime: "9 min read",
+    category: "Mobile Development",
+    tags: ["React Native", "Monorepo", "Mobile", "TypeScript"]
+  }
+];
+
+export type CaseStudy = {
+  slug: string;
+  projectName: string;
+  title: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  metrics: { label: string; value: string }[];
+  stack: string[];
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+  };
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    slug: "dunkin-digital-signage",
+    projectName: "Continental Food LLC",
+    title: "Replacing $50k/year in Licensing with a Custom Tizen Stack",
+    challenge:
+      "Continental Food Group (Dunkin', GongCha, Wonder Bee, Booth Cookies) was paying ~$50k annually for third-party digital signage software across 200+ stores in the UAE and Kuwait. The vendor was slow to iterate, inflexible on customization, and presented a strategic dependency.",
+    solution:
+      "Architected and built a custom digital signage platform from scratch: Samsung Tizen C++ backend on store hardware, an Angular control panel for remote campaign management, and real-time content delivery via ASP.NET Core APIs. Integrated with point-of-sale systems for live inventory, pricing, and promotional syncing.",
+    results: [
+      "Eliminated $50k annual licensing cost in year one",
+      "Deployed to 200+ stores across UAE and Kuwait",
+      "Campaign update latency reduced from 24h to <2 minutes",
+      "Store staff training time reduced from 4 hours to 30 minutes",
+      "99.8% uptime SLA with redundant control centers"
+    ],
+    metrics: [
+      { label: "Annual Savings", value: "$50k+" },
+      { label: "Stores", value: "200+" },
+      { label: "Uptime", value: "99.8%" },
+      { label: "Time to Deploy", value: "<2m" }
+    ],
+    stack: ["Samsung Tizen", "C++", "Angular", "ASP.NET Core", "AWS"],
+    testimonial: {
+      quote:
+        "What would have taken vendors months to build, Rami shipped in weeks. The system is rock-solid, scales effortlessly, and the ROI is immediate.",
+      author: "Operations Director",
+      role: "Continental Food LLC"
+    }
+  },
+  {
+    slug: "makkinni-marketplace-from-zero",
+    projectName: "Makkinni LLC",
+    title: "0-to-1 Educational Marketplace on Next.js + React Native",
+    challenge:
+      "Building a cross-platform educational marketplace from scratch required a scalable superadmin panel, a unified iOS/Android experience, a complex relational database for marketplace transactions, and privacy-focused AI features — all within tight timelines.",
+    solution:
+      "Designed a full-stack architecture: Next.js SSR superadmin with .NET Core microservices, a unified React Native mobile app, and a PostgreSQL schema optimized for marketplace queries. Integrated on-premises local LLMs (Ollama) for privacy-preserving recommendation and moderation features.",
+    results: [
+      "Full mobile app shipped 6 weeks before iOS/Android go-live",
+      "Superadmin onboards new educators in <5 minutes",
+      "PostgreSQL queries optimized to <100ms (p99)",
+      "On-prem AI inference eliminates vendor lock-in",
+      "Unified codebase reduced time-to-market by 40%"
+    ],
+    metrics: [
+      { label: "Time to Shipped", value: "6 weeks" },
+      { label: "Query Latency (p99)", value: "<100ms" },
+      { label: "TTM Improvement", value: "40%" },
+      { label: "Code Reuse", value: "65%" }
+    ],
+    stack: ["Next.js", "React Native", ".NET Core", "PostgreSQL", "Ollama", "TypeScript"]
+  },
+  {
+    slug: "loyalty-platform-high-availability",
+    projectName: "Continental Food LLC",
+    title: "High-Availability Loyalty Platform Serving 2M+ Users",
+    challenge:
+      "Dunkin' and GongCha needed a loyalty platform handling peak traffic of 100k concurrent users during promotions, processing earn/redeem transactions with zero data loss, and integrating with legacy point-of-sale systems across 200+ stores.",
+    solution:
+      "Built a React Native mobile app + Next.js admin console backed by ASP.NET Core APIs on PostgreSQL. Implemented distributed transaction handling for earn/redeem operations, Redis caching for promotional tiers, and AWS load balancing with auto-scaling. Integrated real-time webhooks with POS systems.",
+    results: [
+      "Processed 2.5M transactions in peak day (99.99% success rate)",
+      "Mobile app launch in 8 weeks",
+      "Zero double-spend vulnerabilities",
+      "Average API response time: 45ms (p99: 200ms)",
+      "Automatic failover reduces downtime to <30s"
+    ],
+    metrics: [
+      { label: "Peak Concurrency", value: "100k users" },
+      { label: "Success Rate", value: "99.99%" },
+      { label: "Response Time (p99)", value: "200ms" },
+      { label: "Failover Time", value: "<30s" }
+    ],
+    stack: ["React Native", "Next.js", "ASP.NET Core", "PostgreSQL", "Redis", "AWS"]
+  }
+];

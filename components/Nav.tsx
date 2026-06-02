@@ -7,10 +7,10 @@ import clsx from "clsx";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#ai-lab", label: "AI Lab" },
-  { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
-  { href: "#creative", label: "Creative" },
+  { href: "#case-studies", label: "Work" },
+  { href: "#blog", label: "Blog" },
+  { href: "#cv", label: "CV" },
   { href: "#contact", label: "Contact" }
 ];
 
@@ -68,13 +68,13 @@ export function Nav() {
           </a>
           <a
             href="#contact"
-            className="ml-1 inline-flex items-center gap-2 rounded-md border border-cyan-glow/40 bg-cyan-glow/10 px-4 py-2 text-sm font-medium text-cyan-glow transition-all hover:bg-cyan-glow/20 hover:shadow-glow-cyan"
+            className="ml-1 inline-flex items-center gap-2 rounded-md border border-emerald-glow/40 bg-emerald-glow/10 px-4 py-2 text-sm font-medium text-emerald-glow transition-all hover:bg-emerald-glow/20 hover:shadow-glow-emerald"
           >
             <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-glow opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-glow" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-glow opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-glow" />
             </span>
-            Initiate
+            Get in Touch
           </a>
         </div>
 
@@ -96,17 +96,39 @@ export function Nav() {
             transition={{ duration: 0.25 }}
             className="md:hidden border-t border-white/5 bg-ink-950/90 backdrop-blur-xl"
           >
-            <div className="mx-auto flex max-w-7xl flex-col container-px py-4">
+            <div className="mx-auto max-w-7xl flex-col container-px py-4 space-y-2">
               {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-md px-3 py-3 text-sm text-white/80 transition-colors hover:bg-white/5"
+                  className="block rounded-md px-3 py-3 text-sm text-white/80 transition-colors hover:bg-white/5"
                 >
                   {l.label}
                 </a>
               ))}
+              <div className="border-t border-white/10 pt-4 mt-4 space-y-2">
+                <a
+                  href="/Rami_Kanawati_CV.docx"
+                  download
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-2 rounded-md px-3 py-3 text-sm text-white/80 hover:bg-white/5 transition-colors"
+                >
+                  <Download size={14} />
+                  Download CV
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center gap-2 rounded-md border border-emerald-glow/40 bg-emerald-glow/10 px-3 py-3 text-sm font-medium text-emerald-glow transition-all hover:bg-emerald-glow/20"
+                >
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-glow opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-glow" />
+                  </span>
+                  Get in Touch
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

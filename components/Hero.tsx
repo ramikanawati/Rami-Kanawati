@@ -90,9 +90,12 @@ export function Hero() {
             </motion.p>
 
             <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
-              <a href="#ai-lab" className="btn-primary">
-                <Cpu size={16} />
-                Enter AI Command Center
+              <a href="#contact" className="btn-primary">
+                Get in Touch
+              </a>
+              <a href="#case-studies" className="btn-ghost">
+                View Case Studies
+                <ArrowDown size={14} className="-rotate-45" />
               </a>
               <a
                 href="/Rami_Kanawati_CV.docx"
@@ -100,11 +103,7 @@ export function Hero() {
                 className="btn-ghost"
               >
                 <Download size={14} />
-                Download CV
-              </a>
-              <a href="#projects" className="btn-ghost">
-                View Projects
-                <ArrowDown size={14} className="-rotate-45" />
+                CV
               </a>
             </motion.div>
 
